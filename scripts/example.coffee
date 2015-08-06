@@ -9,11 +9,11 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 cheerio = require 'cheerio'
-
+hackathons = ['DID SOMEBODY SAY HACKATHON??? SIGN ME UP!!!', 'did I hear... HACKATHON', 'I love the thought of a hackathon, too bad I cant attend, as I am a hackbot', 'The prophecy forsees that this group will one day win a hackathon', 'You know, my brother was created at a hackathon', 'Speaking of hackathons, How bout ChowChecker amiright', 'A hackathon (also known as a hack day, hackfest or codefest) is an event in which computer programmers and others involved in software development and hardware development, including graphic designers, interface designers and project managers, collaborate intensively on software projects.', 'I only attend hackathons if they involve free beer', "Hackathons... Hack a thon... Ha cka tho n... Hac kat hon... Ha ck a th on...."]
 module.exports = (robot) ->
-
+  
   robot.hear /hackathon/i, (res) ->
-     res.send "DID SOMEONE SAY HACKATHON??? SIGN ME UP!"
+     res.send res.random hackathons
 
   robot.respond /http status (.*)/i, (msg) ->
     httpCode = msg.match[1]
